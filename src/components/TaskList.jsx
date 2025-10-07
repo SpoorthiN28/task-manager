@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deleteTask, editTask, setStatusFilter, toggleComplete } from "../redux/features/tasks/taskSlice";
+import { deleteTask, editTask, setSearchFilter, setStatusFilter, toggleComplete } from "../redux/features/tasks/taskSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const TaskList = () => {
@@ -9,7 +9,6 @@ const TaskList = () => {
   const [editText, setEditText] = useState('');
 
   const dispatch = useDispatch()
-  console.log(tasks)
 
   const filteredTask = tasks.filter(task => {
     if (filter.status === 'completed') return task.completed;
